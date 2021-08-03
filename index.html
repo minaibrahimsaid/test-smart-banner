@@ -6,9 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-itunes-app" content="app-id=283646709">
     <meta name="google-play-app" content="app-id=com.paypal.android.p2pmobile">
-    <link rel="stylesheet" href="jquery.smartbanner.css" type="text/css" media="screen">
-    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8/jquery.min.js"></script>
-    <script src="jquery.smartbanner.js"></script>
+    <script>
+        
+    var i = 0,
+    iOS = false,
+    iDevice = ['iPad', 'iPhone', 'iPod'];
+
+    for ( ; i < iDevice.length ; i++ ) {
+        if( navigator.platform === iDevice[i] ){ iOS = true; break; }
+    }
+
+    try {
+        //run code that normally breaks the script or throws error
+        if (iOS) { window.location = "paypal://open";}
+    }
+    catch(e) {
+        //do nothing
+    }  
+    </script>
     <title>Document</title>
 </head>
 <body>
